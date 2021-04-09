@@ -16,7 +16,13 @@ public class User {
 	private String name;
 //	
 //	email;
-//	phoneNumber;
+	private long phoneNumber;
+	public long getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
 	public Integer getId() {
 		return id;
 	}
