@@ -6,13 +6,12 @@
 <script type="text/javascript">
 	function saveUser() {
 		function success(response){
+			if(!response.ok){
+				alert('error happned');
+				return;
+			}
 			return response.json();
-			
 		} 
-		function errorHandler(error){
-			console.log(error);
-		}
-		console.log('2');
 		const userform = document.getElementById('userform');
 		
 		if(!userform.checkValidity()){
@@ -30,14 +29,9 @@
 				dob : document.getElementById('dobid').value
 			})
 		});
+		
 		promise.then(success);
-		promise.then(function(data){
-			console.log(data);
-		});
-		promise.catch(function(error){
-			console.log(error);
-		});
-		console.log('1');
+		
 	}
 	
 	function getUsers(){
@@ -48,6 +42,10 @@
 		.then(function(users){
 			console.log(users);
 			const table = document.getElementById('users');
+			const rows = table.children.length;
+			for (let count =0 ; count<rows;count++){
+				table.children[0].remove();
+			}
 			for(let index=0; index< users.length;index++){
 				console.log(users[index]);
 				const currentUser = users[index];

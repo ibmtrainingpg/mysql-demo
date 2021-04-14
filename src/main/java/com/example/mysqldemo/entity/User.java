@@ -23,6 +23,9 @@ public class User {
 	}
 
 	public void setDob(Date dob) {
+		if (dob.compareTo(new Date()) > 0) {
+			throw new IllegalArgumentException("DOB cannot be future date");
+		}
 		this.dob = dob;
 	}
 
