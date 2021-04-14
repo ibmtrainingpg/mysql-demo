@@ -26,7 +26,8 @@
 			},
 			body : JSON.stringify({
 				phoneNumber: document.getElementById('phone').value,
-				name : document.getElementById('username').value
+				name : document.getElementById('username').value,
+				dob : document.getElementById('dobid').value
 			})
 		});
 		promise.then(success);
@@ -63,10 +64,11 @@
 <body>
 	<h3>Userform</h3>
 	<form id='userform'>
-		<input id='username' placeholder="Name" > 
-		<input type='tel' placeholder='Phone Number' pattern="[0-9]{10}" required id='phone'>
+		<input id='username' placeholder="Name" value='Pariwesh'> 
+		<input type='tel' placeholder='Phone Number' pattern="[0-9]{10}" value='7899999902' required id='phone'>
+		<input type='date' placeholder='DOB'  required id='dobid'>
 	</form>
-		<button onclick="saveUser()">Save</button>
+	<button onclick="saveUser()">Save</button>
 	<button onclick="getUsers()">Get Users</button>
 	<table>
 		<thead>
