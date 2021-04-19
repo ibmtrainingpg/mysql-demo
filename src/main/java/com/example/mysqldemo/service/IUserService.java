@@ -8,4 +8,6 @@ public interface IUserService {
 	int save(User user);
 
 	List<User> getAllUsers();
+
+	void deleteUser(int id);
 }
