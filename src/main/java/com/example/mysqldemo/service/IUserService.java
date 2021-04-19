@@ -10,4 +10,6 @@ public interface IUserService {
 	List<User> getAllUsers();
 
 	void deleteUser(int id);
+
+	List<User> getUsersByName(String name);
 }

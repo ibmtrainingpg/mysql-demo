@@ -24,5 +24,10 @@ public class UserService implements IUserService{
 	public void deleteUser(int id) {
 		userRepository.deleteById(id);
 	}
+	@Override
+	public List<User> getUsersByName(String name) {
+		// TODO Auto-generated method stub
+		return userRepository.getUserByName(name);
+	}
 
 }
